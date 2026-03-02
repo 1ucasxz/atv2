@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Produtos - Lucas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gerenciador de Produtos</h1>
+            <nav>
+                <a href="index.html" class="active">Listar Produtos</a>
+                <a href="cadastro.html">Cadastrar Produto</a>
+            </nav>
+        </header>
+
+        <main>
+            <h2>Produtos Cadastrados</h2>
+            <div class="table-container">
+                <table id="tabela-produtos">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Categoria</th>
+                            <th>Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-itens">
+                        <!-- Itens serão carregados aqui via JavaScript (fetch ao backend) -->
+                    </tbody>
+                </table>
+            </div>
+            <p id="mensagem-vazio" class="mensagem-vazio" style="display: none;">Nenhum produto cadastrado ainda.</p>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Quando a página carrega, buscamos os itens do banco de dados
+        document.addEventListener('DOMContentLoaded', carregarItens);
+    </script>
+</body>
+</html>
